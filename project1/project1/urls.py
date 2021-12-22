@@ -19,6 +19,13 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
+<<<<<<< HEAD
     path('news/', include('Firstapp.urls')),
     path('articles/', include('Firstapp.urls'))
 ]
+=======
+    path('news/',include('Firstapp.urls')),
+    path('articles/', include('Firstapp.urls')),
+    path('categories/', include('Firstapp.urls'))
+    ]
+>>>>>>> a685293 (Initial commit)
