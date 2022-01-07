@@ -1,0 +1,44 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+<h1>All articles</h1>
+<h3>{{ time_now|date:'M d Y' }}</h3>
+<h3> {{ value1|default_if_none:"none" }} </h3>
+<hr>
+{% if articles %}
+<table>
+    <tr>
+        <td>
+            name
+        </td>
+        <td>
+            description
+        </td>
+        <td>
+            category
+        </td>
+    </tr>
+    {% for article in articles %}
+    <tr>
+        <td>
+            {{ article.name }}
+        </td>
+        <td>
+            {{ article.description|truncatewords:4 }}
+        </td>
+        <td>
+            {{ article.category.name }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h2>No articles!</h2>
+{% endif %}
+{% endblock content %}
