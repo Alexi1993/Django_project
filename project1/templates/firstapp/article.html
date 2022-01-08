@@ -1,0 +1,44 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %} <!-- не забываем заранее загружать наши фильтры! -->
+
+{% block title %}
+Article
+{% endblock title %}
+
+{% block content %}
+    <h1>All news</h1>
+    <h3>{{ time_now }}</h3>
+    <h3> {{ value1|default_if_none:"nothing" }} </h3>
+    <hr>
+    {% if article %}
+        <table>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Description
+                </td>
+                <td>
+                    Category
+                </td>
+            </tr>
+        {% for article in articles %}
+            <tr>
+                <td>
+                    {{ article.name|multiply:'a' }} <!-- попробуем умножить название товара на строку а -->
+                </td>
+                <td>
+                    {{ article.description|truncatewords:4 }}
+                </td>
+                <td>
+                    {{ article.category.name }}
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h2>NO NEWS</h2>
+    {% endif %}
+{% endblock content %}

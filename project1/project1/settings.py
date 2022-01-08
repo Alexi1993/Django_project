@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'fpages',
-    'Firstapp'
+    'firstapp'
 ]
 SITE_ID = 1
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'project1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Firstapp/templates/Firstapp')],
+        'DIRS': [os.path.join(BASE_DIR, 'firstapp/templates/firstapp')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

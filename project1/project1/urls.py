@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
 
-    path('news/', include('Firstapp.urls')),
-    path('articles/', include('Firstapp.urls'))
+    path('news/', include('firstapp.urls')),
+    path('article/', include('firstapp.urls'))
 ]
